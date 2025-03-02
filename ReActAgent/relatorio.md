@@ -35,3 +35,7 @@ Temos o agente, e quando iniciamos temos um client se inicializando e o system p
 Então temos o metodo call que vai ser acionado toda vez que instanciarmos o Agent (classe). Temos duas possibilidades pra call do agente. A primeira é se caso chamarmos o agente com uma mensagem, então irá armazenar (.append) a mensagem na nossa lista 'messages=[]' e iremos executar a lm, que basicamente irá rodar todas as mensagens no modelo de linguagem (função execute) e irá armazenar tudo no resultado da call do modelo de linguagem e vai retornar esse resultado
 
 ### System Prompt
+É um loop que deve fazer o LLM pensar, fazer a ação necessária, pausar, observar se aquilo que fez está correto e só parar esse loop se estiver. O prompt feito é baseado completamente na ideia do ReAcT.
+
+### Tools
+É basicamente as funções que devemos adicionar dos prompts feitos. Creio que se tivéssemos utilizando algum framework para isso, seria muito mais otimizado esse processo de fazer o setup das ferramentas
