@@ -39,3 +39,13 @@ Então temos o metodo call que vai ser acionado toda vez que instanciarmos o Age
 
 ### Tools
 É basicamente as funções que devemos adicionar dos prompts feitos. Creio que se tivéssemos utilizando algum framework para isso, seria muito mais otimizado esse processo de fazer o setup das ferramentas
+
+### Rodando o agente manualmente
+Para rodar o agente manualmente, fizemos um passo a passo geral do nosso agente, manualmente.
+
+### Criando um loop para rodar automaticamente
+Para não ficar dando recall no agente toda vez, nós faremos o processo virar um loop para o agente pensar gradualmente até achar a solução por conta própria.
+
+Para funcionar, devemos chamar o agente em um número máximo de iterações, no vídeo utilizamos 10 iterações como exemplo, e iremos rodar o agente e analisar o seu retorno todas as vezes.
+
+Basicamente, estamos inicializando o agente, depois damos o nome das nossas ferramentas e daí iniciamos o nosso loop que irá chamar o agente e checar o resultado (passo a passo). Se o resultado incluir PAUSE e Action, deverá pegar o nome da ação (utilizando ReGEx), então o agente deve escolher a ferramenta a ser utilizada, e se conter nas ferramentas que o agente possui, ele executa, caso contrário, ele retorna que não possui a ferramenta ou que não foi possível selecionar a ferramenta correta.
